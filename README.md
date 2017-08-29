@@ -42,6 +42,18 @@ Dockerfile line 29:    && rm odoo_10.0.latest.tar.gz \
 Dockerfile line 30:    && cd /opt/odoo_10.0.latest \
 Dockerfile line 33:    && rm -r /opt/odoo_10.0.latest
 ```
+And change odoo.conf file to your new odoo directory.
+```
+[options]
+addons_path = /mnt/extra-addons,/usr/lib/python2.7/site-packages/odoo-10.0.post20170101-py2.7.egg/odoo/addons
+```
+to
+
+```
+[options]
+addons_path = /mnt/extra-addons,/usr/lib/python2.7/site-packages/odoo-10.0.postlatest-py2.7.egg/odoo/addons
+```
+
 Build your new image.
 #
 
