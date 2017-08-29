@@ -26,7 +26,7 @@ RUN apk add --update --no-cache \
 RUN addgroup odoo && adduser odoo -s /bin/sh -D -G odoo \
     && echo "odoo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir /opt \
-    && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.tar.gz \
+    && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.20170101.tar.gz \
     && tar -xzf odoo_10.0.20170101.tar.gz -C /opt \
     && rm odoo_10.0.20170101.tar.gz \
     && cd /opt/odoo-10.0-20170101 \

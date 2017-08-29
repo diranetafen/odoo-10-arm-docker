@@ -15,6 +15,36 @@ docker build -f /path/to/this/Dockerfile .
 ```
 This might take a long time on your first build, depending on a few conditionals, the write speed of your RPI sd card, and network.
 
+Current Dockerfile defaults to version 10.0.20170101 from Odoo source repository
+#
+## Building a new image from a newer odoo source
+
+[Odoo source code daily builds](https://nightly.odoo.com/10.0/nightly/src/)
+
+After selecting the odoo build version you wish to use:  **in tar.gz format**
+
+Replace the default dockerfile for you selected version.
+
+Example:
+```
+Dockerfile line 27:    && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.20170101.tar.gz \
+Dockerfile line 28:    && tar -xzf odoo_10.0.20170101.tar.gz -C /opt \
+Dockerfile line 29:    && rm odoo_10.0.20170101.tar.gz \
+Dockerfile line 30:    && cd /opt/odoo-10.0-20170101 \
+Dockerfile line 33:    && rm -r /opt/odoo-10.0-20170101
+
+
+Replace with latest for instance:
+
+Dockerfile line 27:    && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.tar.gz \
+Dockerfile line 28:    && tar -xzf odoo_10.0.latest.tar.gz -C /opt \
+Dockerfile line 29:    && rm odoo_10.0.latest.tar.gz \
+Dockerfile line 30:    && cd /opt/odoo_10.0.latest \
+Dockerfile line 33:    && rm -r /opt/odoo_10.0.latest
+```
+Build your new image.
+#
+
 ## How to use this image 
 This image has the same usage as the ofiicial Odoo.
 
