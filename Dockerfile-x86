@@ -1,4 +1,5 @@
 FROM alpine:edge
+MAINTAINER:info@fiercely.pt
 RUN echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk add --update --no-cache \
@@ -19,6 +20,8 @@ RUN apk add --update --no-cache \
     jpeg-dev \
     zlib-dev \
     openldap-dev\
+    nodejs \
+    nodejs-npm \
     && update-ca-certificates  
 
 RUN addgroup odoo && adduser odoo -s /bin/sh -D -G odoo \
@@ -27,6 +30,7 @@ RUN addgroup odoo && adduser odoo -s /bin/sh -D -G odoo \
     && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.20170101.tar.gz \
     && tar -xzf odoo_10.0.20170101.tar.gz -C /opt \
     && rm odoo_10.0.20170101.tar.gz \
+    && npm install -g less less-plugin-clean-css\
     && cd /opt/odoo-10.0-20170101 \
     && pip install -r requirements.txt \
     && python setup.py install \
