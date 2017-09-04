@@ -1,3 +1,7 @@
+# Latest fixes
+Latest fix ( September 1st 2017) :
+Fix "Could not execute command 'lessc'" for missing dependencies
+
 # odoo-10-arm-docker
 
 This repository contains the dockerfile required to build an odoo v.10 image for use in ARM devices, tested in raspberry pi 3.
