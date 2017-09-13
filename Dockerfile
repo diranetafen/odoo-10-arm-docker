@@ -1,5 +1,5 @@
 FROM armhf/alpine:edge
-MAINTAINER: info@fiercely.pt
+LABEL maintainer:"info@fiercely.pt"
 
 RUN echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk add --update --no-cache \
