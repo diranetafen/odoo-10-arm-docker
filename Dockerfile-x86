@@ -37,8 +37,8 @@ RUN addgroup odoo && adduser odoo -s /bin/sh -D -G odoo \
     && rm -r /opt/odoo-10.0-20170101
 
 # Copy entrypoint script and Odoo configuration file
-COPY ./entrypoint.sh /
-COPY ./odoo.conf /etc/odoo/
+COPY entrypoint.sh /
+COPY odoo.conf /etc/odoo/
 RUN chown odoo /etc/odoo/odoo.conf
 
 # Mount /mnt/extra-addons for users addons
