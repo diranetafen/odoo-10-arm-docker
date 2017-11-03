@@ -1,8 +1,8 @@
 
-[![Docker Stars](https://img.shields.io/docker/stars/fiercely/odoo.svg)
-(https://hub.docker.com/r/fiercely/odoo/)]
-[![Docker Pulls](https://img.shields.io/docker/pulls/fiercely/odoo.svg)
-(https://hub.docker.com/r/fiercely/odoo/)]
+[![Docker Stars](https://img.shields.io/docker/stars/fiercely/odoo.svg)]
+(https://hub.docker.com/r/fiercely/odoo/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/fiercely/odoo.svg)]
+(https://hub.docker.com/r/fiercely/odoo/)
 # Latest fixes
 Latest fix ( September 1st 2017) :
 Fix "Could not execute command 'lessc'" for missing dependencies
