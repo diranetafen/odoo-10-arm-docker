@@ -1,7 +1,7 @@
 
-[![Docker Stars](https://img.shields.io/docker/stars/fiercely/odoo-10-arm-docker.svg)]
+![Docker Stars](https://img.shields.io/docker/stars/fiercely/odoo-10-arm-docker.svg)
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/fiercely/odoo-10-arm-docker.svg)]
+![Docker Pulls](https://img.shields.io/docker/pulls/fiercely/odoo-10-arm-docker.svg)
 
 # Latest fixes
 Latest fix ( September 1st 2017) :
