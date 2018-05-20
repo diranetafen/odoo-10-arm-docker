@@ -22,19 +22,19 @@ RUN apk add --update --no-cache \
     openldap-dev\
     nodejs \
     nodejs-npm \
-    && update-ca-certificates  
+    && update-ca-certificates
 
 RUN addgroup odoo && adduser odoo -s /bin/sh -D -G odoo \
     && echo "odoo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && mkdir /opt \
-    && wget https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.20170101.tar.gz \
-    && tar -xzf odoo_10.0.20170101.tar.gz -C /opt \
-    && rm odoo_10.0.20170101.tar.gz \
+    && wget https://nightly.odoo.com/{{ odoo_version }}/nightly/src/odoo_{{ odoo_version }}.{{ odoo_release }}.tar.gz \
+    && tar -xzf odoo_{{ odoo_version }}.{{ odoo_release }}.tar.gz -C /opt \
+    && rm odoo_{{ odoo_version }}.{{ odoo_release }}.tar.gz \
     && npm install -g less less-plugin-clean-css \
-    && cd /opt/odoo-10.0-20170101 \
+    && cd /opt/odoo-{{ odoo_version }}.{{ odoo_release }} \
     && pip install -r requirements.txt \
     && python setup.py install \
-    && rm -r /opt/odoo-10.0-20170101
+    && rm -r /opt/odoo-{{ odoo_version }}.{{ odoo_release }}
 
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
@@ -43,7 +43,7 @@ RUN chown odoo /etc/odoo/odoo.conf
 
 # Mount /mnt/extra-addons for users addons
 RUN mkdir -p /mnt/extra-addons \
-        && chown -R odoo /mnt/extra-addons 
+        && chown -R odoo /mnt/extra-addons
 VOLUME ["/mnt/extra-addons"]
 
 
